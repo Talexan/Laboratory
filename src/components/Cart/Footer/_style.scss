@@ -1,0 +1,49 @@
+@import "../../App/vars";
+
+.cart-footer {
+  background: #eaeff2;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 3fr) 1fr;
+  column-gap: 30px;
+
+  @media (max-width: $mobile-l) {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 15px;
+  }
+
+  @media (max-width: $mobile-s) {
+    grid-auto-rows: minmax(60px, auto);
+    row-gap: 5px;
+  }
+}
+
+.cart-footer > * {
+  padding: 19px 0px;
+}
+.cart-footer__count {
+  grid-column-start: 3;
+  @media (max-width: $mobile-l) {
+    grid-column: 1/3;
+    justify-self: center;
+  }
+
+  @media (max-width: $mobile-s) {
+    grid-column: 1/6;
+    justify-self: start;
+    padding: 0px;
+  }
+}
+.cart-footer__price {
+  @media (max-width: $mobile-l) {
+    grid-column: 3/-1;
+  }
+
+  @media (max-width: $mobile-s) {
+    grid-column: 1/6;
+    padding: 0px;
+  }
+}
